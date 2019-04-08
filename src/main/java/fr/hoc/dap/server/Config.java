@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Config {
 
     /** tatata.*/
-    private static final String CREDENTIALS_FOLDER = System.getProperty("user.home") + "/tokens";
+    private static final String CREDENTIALS_FOLDER = System.getProperty("user.home") + "/dap/tokens";
     /** tatata.*/
     private static final String CLIENT_SECRET_DIR = System.getProperty("user.home") + "/dap/credentials.json";
     /** tatata.*/

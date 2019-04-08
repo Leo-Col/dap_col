@@ -16,11 +16,11 @@ import fr.hoc.dap.server.service.GmailService;
 public class HelloController {
     /** l'automobile.*/
     @Autowired
-    private CalendarService calendarService = new CalendarService();
+    private CalendarService calendarService;
 
     /** l'automobile.*/
     @Autowired
-    private GmailService gmService = new GmailService();
+    private GmailService gmService;
 
     /** ddfj.
      * @return dojf  */

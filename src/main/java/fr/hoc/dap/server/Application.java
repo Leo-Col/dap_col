@@ -27,7 +27,7 @@ public class Application {
 
         Config conf = new Config();
         String nom = "App";
-        //conf.setClientSecretFile("/crediantals_web.json");
+        conf.setClientSecretFile(System.getProperty("user.home") + "/dap/credentials_web.json");
         conf.setApplicationName(nom);
         return conf;
 

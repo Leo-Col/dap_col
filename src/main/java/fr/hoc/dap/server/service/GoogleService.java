@@ -1,8 +1,11 @@
 package fr.hoc.dap.server.service;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +65,10 @@ public abstract class GoogleService {
      */
     protected Credential getCredentials(final String userKey) throws IOException, GeneralSecurityException {
         GoogleAuthorizationCodeFlow flow = getFlow();
+        
         return flow.loadCredential(userKey);
     }
-
+    
     // Build flow and trigger user authorization request.
 
     /** Avoir le credential.
@@ -73,8 +77,12 @@ public abstract class GoogleService {
      * @throws GeneralSecurityException ffkj*/
     public GoogleAuthorizationCodeFlow getFlow() throws IOException, GeneralSecurityException {
         NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        InputStream in = CalendarService.class.getResourceAsStream(conf.getClientSecretFile());
-        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(jsonFactory, new InputStreamReader(in));
+        //InputStream in = CalendarService.class.getResourceAsStream(conf.getClientSecretFile());
+        File in = new java.io.File(conf.getClientSecretFile());
+        InputStream targetStream = new FileInputStream(in);
+        Reader targetReader = new InputStreamReader(targetStream);
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(jsonFactory, targetReader);
+        
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(httpTransport, jsonFactory,
                 clientSecrets, scopes)
                         .setDataStoreFactory(

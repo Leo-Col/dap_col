@@ -1,0 +1,42 @@
+<html>
+<head>
+
+<title> Bonjour  :) </title>
+<link rel="stylesheet" type="text/css" th:href="@{css/dap.css}" href="..static/css/dap.css">
+
+</head>
+
+<body>
+
+<span  > Bonjour ! </span>	
+
+
+<div>
+<ul>
+
+<table>
+
+<tr>
+<td> ID </td> <td> Tokens </td> <td> Expire </td> <td> Refresh </td>
+</tr>  
+
+
+<tr th:each="ID:${users}">
+
+<td th:text=${ID}>
+
+
+</td>
+</tr>
+
+</table>
+
+
+
+</ul>
+</div>
+
+
+</body>
+
+</html>
