@@ -22,10 +22,10 @@ import com.google.api.services.calendar.model.Events;
 public final class CalendarService extends GoogleService {
 
 
-    /** le calandrier.
-     * @return fddf
-     * @throws GeneralSecurityException  dkfj
-     * @throws IOException djdj
+    /** Récuperer le service Calendrier.
+     * @return au service
+     * @throws GeneralSecurityException  ///
+     * @throws IOException ///
      * @param userKey get l'user */
     protected Calendar getService(final String userKey) throws GeneralSecurityException, IOException {
 
@@ -36,13 +36,12 @@ public final class CalendarService extends GoogleService {
         return service;
     }
 
-    /** le calandrier.*/
+    /** Calendar.*/
     /**
-     *
      * @param userKey get l'user.
-     * @throws IOException dada.
-     * @throws GeneralSecurityException dlf.
-     * @return fjodj
+     * @throws IOException ///.
+     * @throws GeneralSecurityException ///.
+     * @return ///
      */
     public String calendrier(final String userKey) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.

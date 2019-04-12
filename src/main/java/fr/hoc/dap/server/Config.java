@@ -2,24 +2,24 @@ package fr.hoc.dap.server;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-/** tatata.*/
+/** Classe Config.*/
 public class Config {
 
-    /** tatata.*/
+    /** Dossier ou sont les tokens.*/
     private static final String CREDENTIALS_FOLDER = System.getProperty("user.home") + "/dap/tokens";
-    /** tatata.*/
+    /** Dossier ou est enregisté le credentials.*/
     private static final String CLIENT_SECRET_DIR = System.getProperty("user.home") + "/dap/credentials.json";
-    /** tatata.*/
+    /** Définition du nom du projet*/
     private static final  String APPLICATION_NAME = "Data Access Project";
-    /** tatata.*/
+    /**Nom de l'application*/
     private String applicationName;
-    /** tatata.*/
+    /** Dossier Credientials*/
     private String credentialFolder;
 
-    /** tatata.*/
+    /** Credientials.*/
     private String clientSecretFile;
 
-    /** tatata.
+    /** Config
      * @return*/
     @Autowired
     public Config() {
@@ -28,51 +28,50 @@ public class Config {
         clientSecretFile = CLIENT_SECRET_DIR;
     }
 
-    /** tatata.
-     * @return blalb.*/
+    /** Récuperer le secret file.
+     * @return Retourne au client secret.*/
 
     public String getClientSecretFile() {
         return clientSecretFile;
     }
 
-    /** tatata.
-     * @return
-     * @param clientSecretFile1 patatae */
+    /** Etablir le client secret file.
+     * @return Retourne au dossier credential
+     * @param clientSecretFile1 /// */
 
     public void setClientSecretFile(final String clientSecretFile1) {
         this.clientSecretFile = clientSecretFile1;
     }
 
-    /** tatata.
+    /** Récupere le dossier Credential.
      * @return boubou.*/
 
     public String getCredentialFolder() {
         return credentialFolder;
     }
 
-    /** tatata.
-     * @return
-     * @param credentialFolder1 patatae */
+    /** Etablie le credentialfolder.
+     * @return au nom de l'application
+     * @param credentialFolder1 /// */
     public void setCredentialFolder(final String credentialFolder1) {
         this.credentialFolder = credentialFolder1;
     }
 
-    /** tatata.
-     * @return balal*/
+    /** Récupérer le nom de l'application.
+     * @return vers le nom de l'application*/
 
     public String getApplicationName() {
         return applicationName;
     }
 
-    /** tatata.
-     * @return
-     * @param applicationName1 patatae */
+    /** Etablie le nom de l'application.
+     * @param applicationName1 /// */
 
     public  void setApplicationName(final String applicationName1) {
         this.applicationName = applicationName1;
     }
-    /** Avoir le credential.
-     * @return dkfi*/
+    /** Récuperer l'authentification de l'utilisateur .
+     * @return à l'authentification */
     public String getoAuth2CallbackUrl() {
         //TODO refactoer en utilisant ZeroConf
         return "/oAuth2Callback";

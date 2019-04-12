@@ -26,18 +26,14 @@ import com.google.api.services.people.v1.PeopleServiceScopes;
 
 import fr.hoc.dap.server.Config;
 
-/** Héritage.*/
+/** Class google Service.*/
 
 public abstract class GoogleService {
 
-    /**  des classes.*/
+    /**  Méthode config en "Autowired"*/
     @Autowired
     private Config conf;
-    //    private Config conf;
-
-    /** Identity.*/
-    // protected static final String APPLICATION_NAME = "Data Access Project";
-    /** Identity.*/
+     /** Identity.*/
     private static JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
     /** Direction Token.*/
     // private static  String tokesDirectory = "tokens";
@@ -58,9 +54,9 @@ public abstract class GoogleService {
 
     /**
      *
-     * @return fvff
-     * @throws IOException fgfg
-     * @throws GeneralSecurityException zd
+     * @return au flow.loadCredential
+     * @throws IOException ///
+     * @throws GeneralSecurityException ///
      * @param userKey get l'user
      */
     protected Credential getCredentials(final String userKey) throws IOException, GeneralSecurityException {
@@ -71,10 +67,10 @@ public abstract class GoogleService {
     
     // Build flow and trigger user authorization request.
 
-    /** Avoir le credential.
-     * @return fkg
-     * @throws IOException ojfo
-     * @throws GeneralSecurityException ffkj*/
+    /** Récuper le Flow.
+     * @return au flow
+     * @throws IOException ///
+     * @throws GeneralSecurityException ///*/
     public GoogleAuthorizationCodeFlow getFlow() throws IOException, GeneralSecurityException {
         NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         //InputStream in = CalendarService.class.getResourceAsStream(conf.getClientSecretFile());
@@ -92,26 +88,26 @@ public abstract class GoogleService {
         return flow;
     }
 
-    /** Identity.
-     *@param cnf baoof */
+    /** Etablie la conf.
+     *@param cnf /// */
     public void setConf(final Config cnf) {
         this.conf = cnf;
     }
 
-    /** Identity.
-     * @return ddad */
+    /** Récupère le JsonFactory.
+     * @return JsonFactory */
     protected JsonFactory getJsonFactory() {
         return jsonFactory;
     }
 
-    /** Identity.
-     *@param jsnf dad*/
+    /** Etablie le JsonFactory.
+     *@param /// */
     protected void setJsonFactory(final JsonFactory jsnf) {
         GoogleService.jsonFactory = jsnf;
     }
 
-    /** Identity.
-     *@return cnf baoof */
+    /** Récupère la Conf
+     *@return à la conf */
     protected Config getConf() {
         return conf;
     }

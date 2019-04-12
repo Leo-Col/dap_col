@@ -12,9 +12,7 @@ import com.google.api.client.auth.oauth2.StoredCredential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.util.store.DataStore;
 
-/**
- * @author house
- *
+/** Classe AdminService en "Service"
  */
 @Service
 public class AdminService extends GoogleService {

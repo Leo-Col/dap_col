@@ -12,17 +12,17 @@ abstract class Start {
 
     /**
     *
-    * @param args j'argumente.
-    * @throws IOException c'est exept.
-    * @throws GeneralSecurityException boug ons.
+    * @param args /// .
+    * @throws IOException ///.
+    * @throws GeneralSecurityException ///
     */
    private static final Logger LOG = LogManager.getLogger();
 
    /**
    *
-   * @param args j'argumente.
-   * @throws IOException c'est exept.
-   * @throws GeneralSecurityException boug ons.
+   * @param args ///
+   * @throws IOException ///
+   * @throws GeneralSecurityException ///
    */
     public static void main(final String[] args) throws IOException, GeneralSecurityException {
 

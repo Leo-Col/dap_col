@@ -8,20 +8,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-/** fçjfjioj.*/
+/** Classe application en "SpringBoot".*/
 @SpringBootApplication
 public class Application {
-    /** fkfkg.*/
+    /** Récupérer le LOG.*/
     private static final Logger LOG = LogManager.getLogger();
 
-    /** fçjfjioj.
-     * @param args jfj */
+    /** Classe Main.
+     * @param args /// */
     public static void main(final String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    /** fçjfjioj.
-     * @return fkfo*/
+    /** Création de config.
+     * @return Retourne à la conf*/
     @Bean
     public Config createConf() {
 
@@ -33,9 +33,9 @@ public class Application {
 
     }
 
-    /** ffjd.
-     * @param ctx course de v en ciboulette
-     * @return fjf
+    /** Afficher les configs
+     * @param ctx ///
+     * @return Retourne vers les arguments
      */
     @Bean
     public CommandLineRunner commandLineRunner(final ApplicationContext ctx) {

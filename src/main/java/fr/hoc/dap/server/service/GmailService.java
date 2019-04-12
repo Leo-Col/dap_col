@@ -14,15 +14,15 @@ import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.model.ListMessagesResponse;
 import com.google.api.services.gmail.model.Message;
 
-/** Maintada.*/
+/** Classe GmailService en "Service".*/
 @Service
 public final class GmailService extends GoogleService {
 
 
-    /**
-    * @throws GeneralSecurityException dodo.
-    * @throws IOException fdjçoj
-    * @return GeneralSecurityException yes.
+    /** Récupère le sercice Gmail
+    * @throws GeneralSecurityException ///
+    * @throws IOException ///
+    * @return GeneralSecurityException ///
     * @param userKey get l'user
     */
     protected Gmail getService(final String userKey) throws GeneralSecurityException, IOException {
@@ -35,12 +35,11 @@ public final class GmailService extends GoogleService {
 
     }
 
-    /**
-     *
+    /** Compte le nombre de messages non lus 
      * @param userKey get l'user.
-     * @throws IOException dodo.
-     * @throws GeneralSecurityException yes.
-     * @return fjdkfl
+     * @throws IOException ///
+     * @throws GeneralSecurityException ///
+     * @return au messages non lus
      */
     public Integer countNbUnreadMessages(final String userKey) throws IOException, GeneralSecurityException {
         Gmail service = getService(userKey);
@@ -54,13 +53,12 @@ public final class GmailService extends GoogleService {
 
     }
 
-    /**
-     *
-     * @param service dada.
-     * @param userId Yo.
-     * @param query yes.
-     * @return Ford.
-     * @throws IOException souple.
+    /** Récupère la liste des messages
+     * @param service ///
+     * @param userId ///
+     * @param query ///
+     * @return Ford ///
+     * @throws IOException ///
      */
     public List<Message> listMessagesMatchingQuery(final Gmail service, final String userId, final String query)
             throws IOException {

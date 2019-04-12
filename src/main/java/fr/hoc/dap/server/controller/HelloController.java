@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.hoc.dap.server.service.CalendarService;
 import fr.hoc.dap.server.service.GmailService;
 
-/** ddfj. */
+/** Classe en "RestController". */
 @RestController
 public class HelloController {
     /** l'automobile.*/
@@ -22,36 +22,36 @@ public class HelloController {
     @Autowired
     private GmailService gmService;
 
-    /** ddfj.
-     * @return dojf  */
+    /** Test Hello.
+     * @return Retourne en hello  */
     @RequestMapping("/hello")
     public String index() {
         return "Hello !";
     }
 
-    /** fjfj.
-     * @param theName course au peid de the name
-     * @return xxx
+    /** Récuperer un bonjour.
+     * @param theName Demande le nom
+     * @return Retourne à bonjour + le nom
      */
     @RequestMapping("/bonjour")
     public String direBonjour(@RequestParam("name") final String theName) {
         return "Bonjour " + theName;
     }
 
-    /** faf.
-     * @return fjsdds
-     * @throws GeneralSecurityException fjsdds
-     * @throws IOException dkfj
+    /** Récuperer les mails.
+     * @return retourne au gmService
+     * @throws GeneralSecurityException ///
+     * @throws IOException ///
      * @param userKey get l'user */
     @RequestMapping("/email/nb")
     public Integer email(@RequestParam("userKey") final String userKey) throws IOException, GeneralSecurityException {
         return gmService.countNbUnreadMessages(userKey);
     }
 
-    /** faf.
-     * @return fjsdds
-     * @throws GeneralSecurityException fjsdds
-     * @throws IOException dkfj
+    /** Récuperer le next event.
+     * @return retourne vers le calendarService
+     * @throws GeneralSecurityException ///
+     * @throws IOException ///
      * @param userKey get l'user*/
     @RequestMapping("/event/next")
     public String calandar(@RequestParam("userKey") final String userKey) throws IOException, GeneralSecurityException {

@@ -24,20 +24,20 @@ import com.google.api.client.http.GenericUrl;
 
 import fr.hoc.dap.server.service.GoogleService;
 
-/** Avoir le credential.*/
+/** Défini la classe en "Controller"*/
 @Controller
 public class GoogleAccount extends GoogleService {
-    /** Avoir le credential.*/
+    /** Récuperer les Logs.*/
    public static final Logger LOG = LogManager.getRootLogger();
-    /** Avoir le credential.*/
+    /** /// */
     private static final Integer SENSIBLE_DATA_FIRST_CHAR  = 1;
-    /** Avoir le credential.*/
+    /** /// */
     private static final Integer SENSIBLE_DATA_LAST_CHAR  = 10;
-    /** Avoir le credential.
-     * @return dkfk
-     * @param session dkfk
-     * @param userId fjfi
-     * @param request fjfi
+    /** Ajout d'un utilisateur.
+     * @return Retourne a Response
+     * @param session Session de connexion
+     * @param userId La valeur entré par l'utilisateur
+     * @param request ///
      * @throws GeneralSecurityException */
     @RequestMapping("/account/add/{userId}")
     public String addAccount(@PathVariable final String userId, final HttpServletRequest request,
