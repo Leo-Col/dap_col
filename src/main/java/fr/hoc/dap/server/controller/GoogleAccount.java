@@ -24,15 +24,19 @@ import com.google.api.client.http.GenericUrl;
 
 import fr.hoc.dap.server.service.GoogleService;
 
+//TODO col by Djer |JavaDoc| Cette Javadoc devrait documenter la CLASSE, pas l'annotation. La signification de l'annotation est documenté DANS l'annotation (déja effectué par Spring)
 /** Défini la classe en "Controller"*/
 @Controller
 public class GoogleAccount extends GoogleService {
+  //TODO col by Djer |JavaDoc| "Configure un Logger pour publier des logs" serait plus juste.
     /** Récuperer les Logs.*/
    public static final Logger LOG = LogManager.getRootLogger();
     /** /// */
     private static final Integer SENSIBLE_DATA_FIRST_CHAR  = 1;
     /** /// */
     private static final Integer SENSIBLE_DATA_LAST_CHAR  = 10;
+
+  //TODO col by Djer |JavaDoc| "Créer un utilisateur (compte) DaP puis redirige vers le choix du comtpe Google à associer" serait mieux.
     /** Ajout d'un utilisateur.
      * @return Retourne a Response
      * @param session Session de connexion
@@ -71,7 +75,7 @@ public class GoogleAccount extends GoogleService {
     /**
      * Handle the Google response.
      * @param request The HTTP Request
-     * @param code    The (encoded) code use by Google (token, expirationDate,...)
+     * @param code    The (encoded) code sent by Google (token, expirationDate,...)
      * @param session the HTTP Session
      * @return the view to display
      * @throws ServletException When Google account could not be connected to DaP.
@@ -111,8 +115,8 @@ public class GoogleAccount extends GoogleService {
     }
 
     /**
-     * retrieve the User ID in Session.
-     * @param session the HTTP Session
+     * Retrieve the User ID in Session.
+     * @param session The HTTP Session
      * @return the current User Id in Session
      * @throws ServletException if no User Id in session
      */
@@ -131,9 +135,9 @@ public class GoogleAccount extends GoogleService {
 
     /**
      * Extract OAuth2 Google code (from URL) and decode it.
-     * @param request the HTTP request to extract OAuth2 code
-     * @return the decoded code
-     * @throws ServletException if the code cannot be decoded
+     * @param request The HTTP request to extract OAuth2 code
+     * @return The decoded code
+     * @throws ServletException If the code cannot be decoded
      */
     private String extracCode(final HttpServletRequest request) throws ServletException {
         final StringBuffer buf = request.getRequestURL();

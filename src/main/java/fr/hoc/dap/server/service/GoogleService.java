@@ -26,15 +26,18 @@ import com.google.api.services.people.v1.PeopleServiceScopes;
 
 import fr.hoc.dap.server.Config;
 
+//TODO col by Djer |Audit Code| Prend en compte les remarques de CheckStyle !
 /** Class google Service.*/
-
 public abstract class GoogleService {
 
+  //TODO col by Djer |JavaDoc| Cette Javadoc devrait documenter la l'ATTRIBUT, pas l'annotation.
     /**  Méthode config en "Autowired"*/
     @Autowired
     private Config conf;
+  //TODO col by Djer |JavaDoc| Non ! juste un "fabrique a JSON"
      /** Identity.*/
     private static JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+  //TODO col by Djer |JavaDoc| Les token vont toujours du haut vers le bas. "directory" se traduit par "dossier"
     /** Direction Token.*/
     // private static  String tokesDirectory = "tokens";
     /** Authorisation.*/
@@ -54,7 +57,7 @@ public abstract class GoogleService {
 
     /**
      *
-     * @return au flow.loadCredential
+     * @return au flow.loadCredential //TODO col by Djer |JavaDoc| Cette méthode renvoie la **valeur de retour** de la méthode getCredentials()
      * @throws IOException ///
      * @throws GeneralSecurityException ///
      * @param userKey get l'user
@@ -88,7 +91,7 @@ public abstract class GoogleService {
         return flow;
     }
 
-    /** Etablie la conf.
+    /** Etablie la conf. 
      *@param cnf /// */
     public void setConf(final Config cnf) {
         this.conf = cnf;

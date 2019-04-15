@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//TODO col by Djer |Audit Code| Prend en compte les remarques de CheckStyle !
+
 @Controller
 
 public class Hello2Controller {

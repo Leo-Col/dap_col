@@ -16,6 +16,7 @@ import com.google.api.client.util.store.DataStore;
 
 import fr.hoc.dap.server.service.AdminService;
 
+//TODO col by Djer |Audit Code| Prend en compte les remarques de CheckStyle !
 @Controller
 public class AdminController {
 
