@@ -10,12 +10,13 @@ public class Config {
     /** Dossier ou est enregisté le credentials.*/
     private static final String CLIENT_SECRET_DIR = System.getProperty("user.home") + "/dap/credentials.json";
     /** Définition du nom du projet*/
-    private static final  String APPLICATION_NAME = "Data Access Project";
+    private static final String APPLICATION_NAME = "Data Access Project";
     /**Nom de l'application*/
     private String applicationName;
     /** Dossier Credientials*/
     private String credentialFolder;
 
+    //TODO col by Djer |JavaDoc| Pas très claire. "Emplacment du fichier d'authentification de l'application pour Google Dev" serait mieux.
     /** Credientials.*/
     private String clientSecretFile;
 
@@ -35,6 +36,7 @@ public class Config {
         return clientSecretFile;
     }
 
+    //TODO col by Djer |JavaDoc| CheckStyle t'indique que ta méthode n'a plus de valeur de retour.
     /** Etablir le client secret file.
      * @return Retourne au dossier credential
      * @param clientSecretFile1 /// */
@@ -43,9 +45,9 @@ public class Config {
         this.clientSecretFile = clientSecretFile1;
     }
 
+    ////TODO col by Djer |JavaDoc| "bouhou" est une ville de Gironde et s'écrit avec une Majuscule. Es-tu sur que cette méthode renvoie vers cette ville ? 
     /** Récupere le dossier Credential.
      * @return boubou.*/
-
     public String getCredentialFolder() {
         return credentialFolder;
     }
@@ -57,6 +59,7 @@ public class Config {
         this.credentialFolder = credentialFolder1;
     }
 
+    //TODO col by Djer |JavaDoc| Cette méthode, renvoie un String (chaine de caractères), elle ne renvoie pas "vraiment" VERS quelque-chose. Pour la JavaDoc des getter, la description et la valeur de retour ont souvent une description très simillaire.
     /** Récupérer le nom de l'application.
      * @return vers le nom de l'application*/
 
@@ -67,13 +70,15 @@ public class Config {
     /** Etablie le nom de l'application.
      * @param applicationName1 /// */
 
-    public  void setApplicationName(final String applicationName1) {
+    public void setApplicationName(final String applicationName1) {
         this.applicationName = applicationName1;
     }
+
+    //TODO col by Djer |JavaDoc| Ici OAuth2CallBack est l'URL sur laquelle Google va pulbier le Tken SI l'utilsiateur accepte des scopes demandé.
     /** Récuperer l'authentification de l'utilisateur .
      * @return à l'authentification */
     public String getoAuth2CallbackUrl() {
-        //TODO refactoer en utilisant ZeroConf
+        //TODO refactorer en utilisant ZeroConf
         return "/oAuth2Callback";
     }
 }

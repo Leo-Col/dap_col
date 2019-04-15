@@ -7,6 +7,7 @@ import java.security.GeneralSecurityException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+//TODO col by Djer |Java| Cette classe n'est plus utile (elle est "rempalcée" par Application.java
 /** .*/
 abstract class Start {
 

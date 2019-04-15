@@ -14,6 +14,8 @@ import com.google.api.services.gmail.Gmail;
 import com.google.api.services.gmail.model.ListMessagesResponse;
 import com.google.api.services.gmail.model.Message;
 
+//TODO col by Djer |Audit Code| Prend en compte les remarques de CheckStyle !
+
 /** Classe GmailService en "Service".*/
 @Service
 public final class GmailService extends GoogleService {
@@ -25,6 +27,7 @@ public final class GmailService extends GoogleService {
     * @return GeneralSecurityException ///
     * @param userKey get l'user
     */
+  //TODO col by Djer |Java| Renome en "buildService" pourait clarifier
     protected Gmail getService(final String userKey) throws GeneralSecurityException, IOException {
      // Build a new authorized API client service.
 
@@ -57,11 +60,14 @@ public final class GmailService extends GoogleService {
      * @param service ///
      * @param userId ///
      * @param query ///
+     * //TODO col by Djer |JavaDoc| Décidement tu es passionné par les voitures !
      * @return Ford ///
      * @throws IOException ///
      */
+    //TODO col by Djer |Java| Devrait être privé, auncune autre classe n'en a besoin.
     public List<Message> listMessagesMatchingQuery(final Gmail service, final String userId, final String query)
             throws IOException {
+        //TODO col by Djer |Log4J| Une petite Log ? "Searching for messages for user " + userId + " matching filter : " + query
         ListMessagesResponse response = service.users().messages().list(userId).setQ(query).execute();
 
         List<Message> messagesId = new ArrayList<Message>();
@@ -79,6 +85,7 @@ public final class GmailService extends GoogleService {
 
         //System.out.println(messagesId.size());
 
+      //TODO col by Djer |Log4J| Une petite Log ? "Found + messagesId.size() + " message(s) for user " + userId +
         return messagesId;
     }
 

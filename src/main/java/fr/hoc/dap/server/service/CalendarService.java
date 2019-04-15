@@ -16,7 +16,8 @@ import com.google.api.services.calendar.model.Events;
 
 
 
-
+//TODO col by Djer |Audit Code| Prend en compte les remarques de CheckStyle !
+//TODO col by Djer |JavaDoc| Cette Javadoc devrait documenter la CLASSE, pas l'annotation.
 /** Calendrier.*/
 @Service
 public final class CalendarService extends GoogleService {
@@ -27,6 +28,7 @@ public final class CalendarService extends GoogleService {
      * @throws GeneralSecurityException  ///
      * @throws IOException ///
      * @param userKey get l'user */
+    //TODO col by Djer |Java| Renome en "buildService" pourait clarifier
     protected Calendar getService(final String userKey) throws GeneralSecurityException, IOException {
 
         final NetHttpTransport httptransport = GoogleNetHttpTransport.newTrustedTransport();
@@ -43,8 +45,11 @@ public final class CalendarService extends GoogleService {
      * @throws GeneralSecurityException ///.
      * @return ///
      */
+  //TODO col by Djer |Java| "retrieveNextEvent" serait plus claire comme nom de de méthode.
     public String calendrier(final String userKey) throws IOException, GeneralSecurityException {
+      //TODO col by Djer |Log4J| Une petite Log ? "Searching for next Event for user " + userkey
         // Build a new authorized API client service.
+      //TODO col by Djer |Java| Nom de variable pas très claire.
         String toto = "";
         // List the next 10 events from the primary calendar.
         Calendar service = getService(userKey);
@@ -53,6 +58,7 @@ public final class CalendarService extends GoogleService {
                 .setSingleEvents(true).execute();
         List<Event> items = events.getItems();
         if (items.isEmpty()) {
+          //TODO col by Djer |Command Line| Pa de SysOut sur un serveur !
             System.out.println("Aucun évènement programmé.");
             toto = "Pas d'évènement";
         } else {
@@ -61,10 +67,14 @@ public final class CalendarService extends GoogleService {
                 if (start == null) {
                     start = event.getStart().getDate();
                 }
+                System.out.println("Aucun évènement programmé.");
                 System.out.printf("%s (%s)\n", event.getSummary(), start);
                 toto = event.getSummary() + "" + start;
             }
         }
+
+      //TODO col by Djer |Log4J| Une petite Log ? "Found event " + toto " for user : " + userkey
+
         return toto;
     }
 }

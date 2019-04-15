@@ -15,7 +15,7 @@ public class Application {
     private static final Logger LOG = LogManager.getLogger();
 
     /** Classe Main.
-     * @param args /// */
+     * @param args Paramètre de la ligne de commande */
     public static void main(final String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -33,6 +33,7 @@ public class Application {
 
     }
 
+    //TODO col by Djer |Audit Code| Ton plugin CheckStyle n'était pas activé/configuré (il manque un . (point) sur la description de ta Javadoc).
     /** Afficher les configs
      * @param ctx ///
      * @return Retourne vers les arguments
@@ -41,11 +42,14 @@ public class Application {
     public CommandLineRunner commandLineRunner(final ApplicationContext ctx) {
         return args -> {
 
+            //TODO col by Djer |IOC| Attention, ce que tu affiches est "faux". Tu affiches des données de la config par defaut; Ta "vrai" config est produite par createConf();
+            //Si tu souhaite aficher les infos de la config, fait-le là ou elle sont modifiée/produite (dans le createConf())
             Config myConfig = new Config();
 
             //GmailQuickstart myGmail = GmailQuickstart.getInstance();
             //            CalendarQuickstart myCalendar = CalendarQuickstart.getInstance();
 
+            //TODO col by Djer |Java| Ne pas faire de SysOut sur un composant "serveur". utilise une LOG si besoin.
             System.out.println(myConfig.getApplicationName());
 
             //myGmail.setConf(myConfig);
